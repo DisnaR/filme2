@@ -1,7 +1,7 @@
 :root {
     --cor-destaque: #af0404;
     --cor-link: red;
-    --cor-fundo-header: url('https://wallpaper4k.top/wp-content/uploads/2023/09/homem-de-ferro-wallpaper-4k-9027.jpg');
+    --cor-fundo-header: url('./imagens/homem-de-ferro-wallpaper-4k-9027.jpg');
     --altura-header: 400px;
     --padding-header: 20px;
     --espacamento-link-container: 20px;
@@ -9,6 +9,7 @@
     --cor-texto-footer: #fff;
     --cor-fundo-footer: #333;
     --padding-footer: 40px;
+    --cor-texto-sinopse: #fff;
 }
 
 body {
@@ -33,29 +34,28 @@ body {
 
 .header .link {
     color: var(--cor-link);
-    margin-bottom: var(--espacamento-link); /* Espaçamento vertical entre as palavras */
+    margin-bottom: var(--espacamento-link);
     text-decoration: none;
     font-weight: bold;
-    position: relative; /* Adicionando posição relativa */
-    font-size: 1.2rem; /* Ajustando o tamanho da fonte */
-    display: block; /* Garantindo que cada palavra fique em uma linha */
+    position: relative;
+    font-size: 1.2rem;
+    display: block;
 }
 
-
-.header .link::after { /* Utilizando ::after para criar o contorno */
-    content: ''; /* Adicionando um conteúdo vazio */
-    position: absolute; /* Posicionando absolutamente em relação ao link */
-    top: -5px; /* Ajustando a posição do contorno */
-    right: -15px; /* Ajustando a posição do contorno */
-    width: calc(100% + 30px); /* Ajustando a largura do contorno */
-    height: calc(1.2rem + 10px); /* Ajustando a altura do contorno */
-    border: 2px solid transparent; /* Definindo uma borda transparente inicialmente */
-    border-radius: 5px; /* Adicionando um raio à borda */
-    z-index: -1; /* Colocando atrás do texto */
-    transition: border-color 0.3s; /* Adicionando uma transição suave para a cor da borda */
+.header .link::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: -15px;
+    width: calc(100% + 30px);
+    height: calc(1.2rem + 10px);
+    border: 2px solid transparent;
+    border-radius: 5px;
+    z-index: -1;
+    transition: border-color 0.3s;
 }
 
-.header .link:hover::after { /* Alterando a cor da borda ao passar o mouse sobre o link */
+.header .link:hover::after {
     border-color: var(--cor-destaque);
 }
 
@@ -66,6 +66,38 @@ section {
 section h2 {
     color: var(--cor-destaque);
     margin-bottom: 20px;
+}
+
+#sinopse {
+    background-image: url('./imagens/homem-de-ferro-wallpaper-4k-7581.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-bottom: 0.1px;
+    color: var(--cor-texto-sinopse);
+}
+
+.col-md-4 {
+    color: var(--cor-texto-sinopse);
+}
+
+.col-md-6 {
+    color: var(--cor-texto-sinopse);
+}
+#atores {
+    background-image: url('../src/imagens/2158711.jpg');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: fill;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0;
+}
+
+#diretor {
+    background-image: url('./imagens/Diretor_f.jpg');
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-bottom: 50px;
 }
 
 .ator h3,
@@ -93,7 +125,6 @@ footer ul li a {
     text-decoration: none;
 }
 
-/*Ipad Mini*/
 @media only screen and (max-width: 320px) {
     .header {
         height: auto;
