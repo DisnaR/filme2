@@ -1,0 +1,150 @@
+:root {
+    --cor-destaque: #af0404;
+    --cor-link: red;
+    --cor-fundo-header: url('https://wallpaper4k.top/wp-content/uploads/2023/09/homem-de-ferro-wallpaper-4k-9027.jpg');
+    --altura-header: 400px;
+    --padding-header: 20px;
+    --espacamento-link-container: 20px;
+    --espacamento-link: 20px;
+    --cor-texto-footer: #fff;
+    --cor-fundo-footer: #333;
+    --padding-footer: 40px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.header {
+    background-image: var(--cor-fundo-header);
+    background-size: cover;
+    color: var(--cor-link);
+    padding: var(--padding-header) 0;
+    height: var(--altura-header);
+    position: relative;
+}
+
+.header .link-container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: var(--espacamento-link-container);
+}
+
+.header .link {
+    color: var(--cor-link);
+    margin-bottom: var(--espacamento-link); /* Espaçamento vertical entre as palavras */
+    text-decoration: none;
+    font-weight: bold;
+    position: relative; /* Adicionando posição relativa */
+    font-size: 1.2rem; /* Ajustando o tamanho da fonte */
+    display: block; /* Garantindo que cada palavra fique em uma linha */
+}
+
+
+.header .link::after { /* Utilizando ::after para criar o contorno */
+    content: ''; /* Adicionando um conteúdo vazio */
+    position: absolute; /* Posicionando absolutamente em relação ao link */
+    top: -5px; /* Ajustando a posição do contorno */
+    right: -15px; /* Ajustando a posição do contorno */
+    width: calc(100% + 30px); /* Ajustando a largura do contorno */
+    height: calc(1.2rem + 10px); /* Ajustando a altura do contorno */
+    border: 2px solid transparent; /* Definindo uma borda transparente inicialmente */
+    border-radius: 5px; /* Adicionando um raio à borda */
+    z-index: -1; /* Colocando atrás do texto */
+    transition: border-color 0.3s; /* Adicionando uma transição suave para a cor da borda */
+}
+
+.header .link:hover::after { /* Alterando a cor da borda ao passar o mouse sobre o link */
+    border-color: var(--cor-destaque);
+}
+
+section {
+    padding: 40px 0;
+}
+
+section h2 {
+    color: var(--cor-destaque);
+    margin-bottom: 20px;
+}
+
+.ator h3,
+.diretor h3,
+footer h3 {
+    color: var(--cor-destaque);
+}
+
+.ator p {
+    margin: 0;
+}
+
+footer {
+    background-color: var(--cor-fundo-footer);
+    color: var(--cor-texto-footer);
+    padding: var(--padding-footer) 0;
+}
+
+footer ul li {
+    margin-bottom: 10px;
+}
+
+footer ul li a {
+    color: var(--cor-texto-footer);
+    text-decoration: none;
+}
+
+/*Ipad Mini*/
+@media only screen and (max-width: 320px) {
+    .header {
+        height: auto;
+        padding-bottom: 20px;
+    }
+
+    .header .link-container {
+        position: static;
+        margin-top: 10px;
+        text-align: right;
+    }
+
+    .header .link {
+        font-size: 16px;
+        margin-left: 10px;
+    }
+
+    section {
+        padding: 20px 0;
+    }
+
+    section h2 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .ator h3,
+    .diretor h3 {
+        font-size: 16px;
+    }
+
+    footer {
+        padding: 20px 0;
+    }
+
+    footer h3 {
+        font-size: 18px;
+    }
+
+    footer ul li {
+        margin-bottom: 5px;
+    }
+
+    footer ul li a {
+        font-size: 14px;
+    }
+
+    .container {
+        padding-right: 10px;
+        padding-left: 10px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
